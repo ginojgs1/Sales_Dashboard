@@ -101,6 +101,127 @@ Use card visuals to display the UserPrincipalName.
 
 ![Image](https://github.com/user-attachments/assets/22588a2f-9251-4c27-b71d-0cdb9c3b8bde)
 
+▪ Add tree map and stacked bar chart to display the below insight and place the column under the correct data field.
+
+![Image](https://github.com/user-attachments/assets/c7d2e812-0b46-467f-aec7-1d7c25d17658)
+
+▪ Use the bookmark feature to create the below functionality to switch values between sales and profit by clicking on the button on sales and profit.
+
+![Image](https://github.com/user-attachments/assets/c0b08d87-843b-44ac-90e8-9e842e1ae1cb)
+
+▪ Go to the View tab and select the Bookmarks and Selection pane.
+
+▪ Add two buttons with button text and create line charts for sales and profit. Place these line charts on top of each other.
+
+▪ Capture two bookmarks and define proper names for them. From the Selection pane,hide the visuals and link the buttons with the respective bookmark.
+
+![Image](https://github.com/user-attachments/assets/a802bc7f-38a0-46a9-8c59-0bac6c8267cf)
+
+Step 5: Create a new page using the duplicate page feature for “Q&A Analysis”.
+
+▪ Remove all the visuals except the header part.
+
+▪ Now add a Q&A visual on the new report page which will display suggested questions
+automatically
+
+![Image](https://github.com/user-attachments/assets/ee2e31b5-fae7-4fd8-ba6f-4e7318de8558)
+
+▪ To train the Q&A data model, click on the settings icon on this visual and then choose to add synonyms option.
+
+![Image](https://github.com/user-attachments/assets/b5be807c-fb7d-40d3-8896-ec1fe93f66e1)
+
+▪ Add map visual to show “Total sales by country” and change the data color property same as the below screenshot.
+
+![Image](https://github.com/user-attachments/assets/a9a1231a-4f47-41c4-9d1e-b96adb95f3e4)
+
+Step 6: Create Roles (Row level security) in the designed report as below.
+
+▪ In the Modeling tab, click on the Manage roles and then create button.
+
+![Image](https://github.com/user-attachments/assets/584e4685-9e43-443f-84b2-eeec7fba569b)
+
+▪ Similarly, other roles will also be created in the above Manage roles window based on the requirement.
+
+Step 7: Create Dynamic Roles (Dynamic row level security) using the
+USERPRINCIPALNAME() function.
+
+▪ Create an excel sheet with the name “Country Access” with columns – UserID/EmailID and Country.
+
+▪ Add your Desktop ID and EmailID which are used to log into the Power BI Service, and in Country Column add country names that you want to assign to that particular user as shown in the below example.
+
+![Image](https://github.com/user-attachments/assets/776e6609-d1f8-445b-aa09-9fb7fe8bd817)
+
+Step 8: Import the Country Access table in the Power BI model, and add table relationship between Country Access table and Orders table based on “Country” Column.
+
+![Image](https://github.com/user-attachments/assets/86fa5707-94c9-4174-ab02-6f38656e2224)
+
+Step 9: Under the Modeling tab, click on Manage roles.
+
+![Image](https://github.com/user-attachments/assets/3152f388-0b58-4a13-90cf-3606b4f2af52)
+
+Step 10: Click on Create and give a role name as “DynamicCountryRole”, select the table to filter the “Emil_ID/User_ID” column with USERPRINCIPALNAMR().
+
+DAX: [Email_ID/User_ID] = USERPRINCIPALNAME()
+
+▪ Finally, click on save.
+
+![Image](https://github.com/user-attachments/assets/01e9ce3d-3886-4e29-8568-4d3c19d280bd)
+
+Step 11: Under the Modeling tab, click on View as.
+
+![Image](https://github.com/user-attachments/assets/8fbb5a55-a2dd-4570-81a6-ba3c9caf45be)
+
+Step 12: Select the role you want to test, for example, let’s select DynamicCountryRole and click on Ok.
+
+![Image](https://github.com/user-attachments/assets/126db86c-5e0d-48fd-bec8-dc3290ae0874)
+
+▪ Now, you will be able to view the report assigned to your desktop ID as in the Country Access table.
+
+![Image](https://github.com/user-attachments/assets/ae8702f0-77f7-458e-aeb4-5d2a4ee57c1b)
+
+Step 13: Publish report on Power BI Service.
+
+▪ Now, save this report and publish it to Power BI Service in the workspace.
+
+▪ But before you share this report with any user you need to add users under the security roles created otherwise data will not be visible to any users.
+
+▪ Go to the Dataset and select the Security option on right-click.
+
+![Image](https://github.com/user-attachments/assets/ae2e4583-6ac4-4d1b-9c13-044ee149fe45)
+
+![Image](https://github.com/user-attachments/assets/c4580cbd-4c71-40e5-b20c-c8f2e92d1b53)
+
+Step 14: Share report with users:
+
+![Image](https://github.com/user-attachments/assets/55497242-071b-45ae-b210-3a685a1e23f3)
+
+
+▪ Once the report is shared with business users or other report viewers they will get data access in the report as per the defined roles (RLS) only.
+
+Step 15: To test the roles in the Power BI service, add a user to the role as shown below:
+
+![Image](https://github.com/user-attachments/assets/61742dce-b6d1-40b7-b601-f5c681a9d2f1)
+
+Step 16: After adding the user to the role, click on hover beside the role and select Test as role.
+
+![Image](https://github.com/user-attachments/assets/61abb5e6-8836-4e08-b288-7ce80d01e25c)
+
+▪ Now, you will be able to view the report assigned to your desktop ID as in the Country Access table.
+
+![Image](https://github.com/user-attachments/assets/6d55ac91-4d74-4f04-a394-97b9285e95eb)
+
+Step 17: You can pin your entire report to a dashboard. Click on the hover to select the Pin to dashboard option.
+
+![Image](https://github.com/user-attachments/assets/c18b1f34-1ed0-4899-8418-1bb333f39d23)
+
+Step 18: Select the New dashboard option and give a dashboard name, and click on Pin live.
+
+![Image](https://github.com/user-attachments/assets/db2c833b-827e-4034-a3db-cb8c3cc87abe)
+
+▪ You will see the live interactive pinned dashboard now.
+
+![Image](https://github.com/user-attachments/assets/af16563a-d3bd-422d-83ba-285db11d707f)
+
 
 
 ### Output
